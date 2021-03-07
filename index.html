@@ -4,177 +4,459 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sebastian Netzker | Front End Development</title>
-
     <link rel="stylesheet" type="text/css" href="style.css" />
+    
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
-    <script src="script.js"></script>
+
+    <link rel="icon" type="image/png" href="img/favicon_sebastian.png"/>
+ <script src="node_modules/pts/dist/pts.js"></script>
+
+
+  
   </head>
-  <body onload="automatic_closeMenu() , hideArrow()">
-    <main>
-      <div class="head_div">
-        <div class="headname">
-          <a href="index.html">SEBASTIAN NETZKER</a>
+  <body onload="automatic_closeMenu() , getParameter()">
+
+    <div class="popup" id="popup-1">
+
+        <div class="overlay"></div>
+        <div class="content">
+            <button onclick="closePopup()" class="close-btn">&times</button>
+            <h3>Email is sent.</h3>
         </div>
 
-        <div class="headlinks">
-          <a class="portfolio_link" href="portfolio.html">Portfolio</a>
-          <a class="contact_link" href="contact.html">Contact</a>
+    </div>
+    <header>
+      
+      <section id="home" class="flex flex_home">
+        
+        
+      <div class="pt">
 
-          <a onclick="showMenu()" href="#" class="burger-menu" id="burger-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </a>
+        <canvas id="canvas">
 
-          <a
-            onclick="closeMenu()"
-            href="#"
-            class="close-menu d-none"
-            id="close-menu"
-            >X</a
+        </canvas>
+
+        
+
+  
+
+    
+  
+        </div>
+        
+
+        <div class="flex">
+          <div class="text">
+            Hello I´m
+
+            <span class="personal_name">Sebastian Netzker</span>
+            .
+
+            <br />
+
+            I'm a front-end developer. 
+          </div>
+
+          <div
+            class="button"
+            onmouseover="bottomArrow()"
+            onmouseout="rightArrow()"
           >
+
+          <a href="#portfolio">
+         View my work
+           
+
+            <img
+              id="arrow_img"
+              class="arrow_img"
+              src="img/arrow_right.png"
+              alt=""
+            /></a>
+          </div>
         </div>
+      </section>
+    </header>
+
+    <nav id="navbar">
+      <a id="home_navbar" onclick="changeColorHome()" href="#home">HOME</a>
+      <a id="about_navbar" onclick="changeColorAbout()" href="#about">ABOUT</a>
+      <a id="portfolio_navbar" onclick="changeColorPortfolio()" href="#portfolio">PORTFOLIO</a>
+      <a id="contact_navbar" onclick="changeColorContact()" href="#contact">CONTACT</a>
+
+
+      <a
+        onclick="showMenu()"
+        class="burger-menu d-none"
+        id="burger-menu"
+      >
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+
+       <a
+        onclick="closeMenu()"
+        class="close-menu d-none"
+        id="close-menu"
+        >X</a
+      >
+
+
+  
+
+    </nav>
+
+     <div id="overlay-menu" class="overlay-menu d-none">
+        <a id="home_overlay" href="#home">HOME</a>
+        <a id="about_overlay" href="#about">ABOUT</a>
+        <a id="portfolio_overlay" href="#portfolio">PORTFOLIO</a>
+        <a id="contact_overlay" href="#contact">CONTACT</a>
       </div>
 
-      <div id="overlay-menu" class="overlay-menu d-none">
-        <a class="portfolio-overlay" href="portfolio.html">Portfolio</a>
-        <a class="contact-overlay" href="contact.html">Contact</a>
-      </div>
 
-      <div class="startinformation">
-        <div class="startinformation_left">
-          <h1>Hey, I´m Sebastian</h1>
 
-          <h2>A front end developer from Cottbus in Germany.</h2>
 
-          <div class="button_div">
-            <a href="portfolio.html"
-              ><button class="projects_button">My Projects</button></a
-            >
+
+
+
+
+    <main>
+      <section class="about" id="about">
+        <h1 id="headline_about">ABOUT</h1>
+
+        <div class="flex_about">
+          <div class="about_left" id="about_information">
+            <img
+              class="application_img"
+              src="img/application_photo.jpg"
+              alt=""
+            />
+
+            <h2>WHO IS SEBASTIAN?</h2>
+
+            <p>
+              I'm a
+
+              <span>Front-End Devloper</span>
+
+              from Cottbus, Germany.
+            </p>
+          </div>
+
+          <div class="skills" id="about_skills">
+        
+            <li>
+              <h3>HTML</h3>
+              <span class="bar"><span class="html"></span></span>
+            </li>
+
+            <li>
+              <h3>CSS</h3>
+              <span class="bar"><span class="css"></span></span>
+            </li>
+
+            <li>
+              <h3>Javascript</h3>
+              <span class="bar"><span class="javascript"></span></span>
+            </li>
+
+            <li>
+              <h3>Bootstrap</h3>
+              <span class="bar"><span class="bootstrap"></span></span>
+            </li>
+
+            <li>
+              <h3>REST API</h3>
+              <span class="bar"><span class="rest_api"></span></span>
+            </li>
+
+            <li>
+              <h3>Git & Github</h3>
+              <span class="bar"><span class="git"></span></span>
+            </li>
+
+            <li>
+              <h3>Scrum</h3>
+              <span class="bar"><span class="scrum"></span></span>
+            </li>
+
+            <li>
+              <h3>Kanbanflow</h3>
+              <span class="bar"><span class="kanbanflow"></span></span>
+            </li>
+          </div>
+
+
+  
+
+         
+            
+        </div>
+
+         
+
+            <div class="story step1" id="story_step1">
+
+              <img class="img_story" src="img/university.svg" alt="">
+
+              <h2>My study in Biotechnology</h2>
+
+              <p>was not the right way for me. I decide to quit the university.</p>
+
+            </div>
+
+
+            <div class="story step2" id="story_step2">
+
+              <img class="img_story" src="img/lightbulb.svg" alt="">
+
+              <h2>I reorient myself</h2>
+
+              <p>and ask me the question "What do I really want to do professionally?". I looked for different career paths, so that I can find a job that really fullfills me.</p>
+
+            </div>
+
+         </div>
+
+         
+
+
+            <div class="story step3" id="story_step3">
+
+              <img class="img_story" src="img/laptop_code.svg" alt="">
+
+              <h2>I discovered programming and software development</h2>
+
+              <p>after some time has passed. First experience I made with an simple online course about web development.</p>
+
+            </div>
+
+
+            <div class="story step4" id="story_step4">
+
+              <img class="img_story" src="img/rocket.svg" alt="">
+
+              <h2>I developed a huge interest in this career path</h2>
+
+              <p>so it was clear to me that I want to work in the IT Sector. I decide me to learn Front-End Development in a professional software development school to reach this goal.</p>
+
           </div>
         </div>
 
-        <div class="startinformation_right">
-          <img
-            class="application_photo"
-            src="img/application_photo_2.jpg"
-            alt=""
+
+      </section>
+
+      <section class="portfolio" id="portfolio">
+
+        <h1 id="headline_portfolio">PORTFOLIO</h1>
+
+        <div class="flex_portfolio">
+        <div onclick="showAll()" id="portfolio_all" class="portfolio_section portfolio_section_clicked portfolio_all">All</div>
+        <div onclick="showQuiz()" id="portfolio_quiz" class="portfolio_section portfolio_quiz">Quiz</div>
+        <div onclick="showGroupprojects()" id="portfolio_groupprojects" class="portfolio_section portfolio_groupprojects">Groupprojects</div>
+        <div onclick="showGames()" id="portfolio_games" class="portfolio_section portfolio_games">Games</div>
+      </div>
+
+      <div class="portfolio_section_img">
+     
+
+         
+
+      <div class="image quizapp" id="quizapp">
+
+       <img class="portfolio_img" src="img/quizapp.png" alt="quizapp">
+       <div class="image_overlay">
+
+         <h2>HTML Quiz</h2>
+
+          <p>A simple quiz with questions about html.</p>
+
+          <div class="flex_project">
+
+          <button onclick="location.href='http://sebastian-netzker.developerakademie.com/html_quizapp/'" type="button">SHOW PROJECT</button>
+
+          <button onclick="location.href='http://sebastian-netzker.developerakademie.com/html_quizapp/out/'" type="button">JS DOCUMENTATION</button>
+
+          </div>
+
+       </div>
+         
+      </div>
+
+
+
+
+      <div class="image join_taskmanager" id="join_taskmanager">
+
+       <img class="portfolio_img" src="img/join_taskmanager.png" alt="join_taskmanager">
+       <div class="image_overlay">
+
+         <h2>JOIN - The Task Manager</h2>
+
+          <p>This Taskmanager is based on the urgent - important principle from Eisenhower.</p>
+
+          <div class="flex_project">
+
+          <button  onclick="location.href='http://sebastian-netzker.developerakademie.com/join_taskmanager/'" type="button">SHOW PROJECT</button>
+
+          <button  onclick="location.href='http://sebastian-netzker.developerakademie.com/join_taskmanager/out/'" type="button">JS DOCUMENTATION</button>
+
+          </div>
+
+       </div>
+         
+      </div>
+
+
+
+      <div class="image kochwelt" id="kochwelt">
+
+       <img class="portfolio_img" src="img/kochwelt.png" alt="kochwelt">
+       <div class="image_overlay">
+
+         <h2>Kochwelt</h2>
+
+          <p>A website about cooking recipes.</p>
+
+          <div class="flex_project">
+
+          <button  onclick="location.href='http://sebastian-netzker.developerakademie.com/kochwelt/'" type="button">SHOW PROJECT</button>
+
+          <button  onclick="location.href='http://sebastian-netzker.developerakademie.com/kochwelt/out/'" type="button">JS DOCUMENTATION</button>
+
+          </div>
+
+       </div>
+         
+      </div>
+
+
+
+      <div class="image tic_tac_toe" id="tic_tac_toe">
+
+       <img class="portfolio_img" src="img/tic_tac_toe.png" alt="tic_tac_toe">
+       <div class="image_overlay">
+
+         <h2>Tic Tac Toe</h2>
+
+          <p>The classical game.</p>
+
+          <div class="flex_project">
+
+          <button  onclick="location.href='http://sebastian-netzker.developerakademie.com/tic_tac_toe/'" type="button">SHOW PROJECT</button>
+
+          <button onclick="location.href='http://sebastian-netzker.developerakademie.com/tic_tac_toe/out/'" type="button">JS DOCUMENTATION</button>
+
+          </div>
+
+       </div>
+         
+      </div>
+
+
+
+      <div class="image el_pollo_loco" id="el_pollo_loco">
+
+       <img class="portfolio_img" src="img/el_pollo_loco.png" alt="el_pollo_loco">
+       <div class="image_overlay">
+
+         <h2>El Pollo Loco</h2>
+
+          <p>A jump-and-run-game based on javascript.</p>
+
+          <div class="flex_project">
+
+          <button  onclick="location.href='http://sebastian-netzker.developerakademie.com/el_pollo_loco/'" type="button">SHOW PROJECT</button>
+
+          <button onclick="location.href='http://sebastian-netzker.developerakademie.com/el_pollo_loco/out/'">JS DOCUMENTATION</button>
+
+          </div>
+
+       </div>
+         
+      </div>
+
+
+
+    </div>
+
+
+      </section>
+
+      <section class="contact" id="contact">
+        <h1 id="headline_contact">Contact</h1>
+
+        <p id="content_contact">Got feedback or want to work together ?</p>
+
+        
+        <form
+        action="https://sebastian-netzker.com/send_mail.php"
+        method="POST"
+      >
+        <div class="form-group" id="form_name">
+          <input
+            name="name"
+            type="name"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Your name"
+            required
           />
         </div>
-      </div>
+
+        <div class="form-group" id="form_email" >
+          <input
+            name="email"
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            placeholder="Your email"
+            required
+          />
+        </div>
+
+        <div class="form-group" id="form_message">
+          <textarea
+            name="message"
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="10"
+            placeholder="Your message"
+            required
+          ></textarea>
+        </div>
+
+        <div class="btn_send" id="btn_send">
+          <button>Send message</button>
+        </div>
+      </form>
+      </section>
     </main>
 
-    <div class="middle_div">
-      <h2 class="h2_story">PERSONAL STORY</h2>
-
-      <div class="div_personal_story">
-        <div>
-          <h2 class="step_personal_story">
-            <img class="arrow_image" id="arrow-image1" src="img/arrow_right.svg" alt="" /> MY
-            STUDY IN BIOTECHNOLOGY
-          </h2>
-
-          <p>was not the right way for me. I decide to quit the university.</p>
-
-          <h2 class="step_personal_story">
-            <img class="arrow_image" id="arrow-image2" src="img/arrow_right.svg" alt="" /> I
-            REORIENT MYSELF
-          </h2>
-
-          <p>
-            and ask me the question "What do I really want to do
-            professionally?". I looked for different career paths, so that I can
-            find a job that really fullfills me.
-          </p>
-
-          <h2 class="step_personal_story">
-            <img class="arrow_image" id="arrow-image3" src="img/arrow_right.svg" alt="" /> I
-            DISCOVERED PROGRAMMING AND SOFTWARE DEVELOPMENT
-          </h2>
-
-          <p>
-            after some time has passed. First experience I made with an simple
-            online course about web development.
-          </p>
-
-          <h2 class="step_personal_story">
-            <img class="arrow_image" id="arrow-image4" src="img/arrow_right.svg" alt="" /> I
-            DEVELOPED A HUGE INTEREST IN THIS CAREER PATH
-          </h2>
-
-          <p>
-            so it was clear to me that I want to work in the IT Sector. I decide
-            me to learn Front-End Development in a professional software
-            development school to reach this goal.
-          </p>
-        </div>
-      </div>
-
-      <h2 class="h2_story">SKILLS</h2>
-
-      <div class="div_flexbox">
-        <div class="div_mainstack">
-          <h3>Main Stack</h3>
-
-          <p>HTML</p>
-
-          <p>CSS</p>
-
-          <p>Javascript</p>
-
-          <p>Bootstrap</p>
-        </div>
-
-        <div class="div_project_management">
-          <h3>Project Management</h3>
-
-          <p>SCRUM</p>
-
-          <p>Kanban</p>
-
-          <p>Git</p>
-
-          <p>Github</p>
-
-          <p></p>
-        </div>
-      </div>
-    </div>
-
-    <div class="collaborate_div">
-      <div>
-        <h1 class="h1_collaborate">Let´s Collaborate</h1>
-
-        <h2 class="h2_collaborate">You have questions to me ?</h2>
-
-        <div>
-          <a href="contact.html">
-            <button class="contact_button">Get in Touch</button>
-          </a>
-        </div>
-      </div>
-
-      <div class="social_media">
-        <p>Social Media</p>
-
-        <a href="https://github.com/sebastian-netzker">
-          <img class="github_logo" src="img/github_logo.png" alt=""
-        /></a>
-      </div>
-    </div>
+    
 
     <footer>
-      <p>&copy; 2021 Sebastian Netzker</p>
-      <div class="footer_div">
-        <a class="dataprotection_link" href="dataprotection.html"
-          >Data Protection</a
-        >
-        | <a class="imprint_link" href="imprint.html">Imprint</a>
-      </div>
+     <a href="#home"> <img class="double_arrow" src="img/double_arrow.png" alt=""></a>
+
+      <a href="https://github.com/sebastian-netzker">  <img class="github_logo" src="img/github_logo.png" alt=""></a>
+
+        <div class="links" >
+          <a href="dataprotection.html">Data Protection</a>
+          
+          <a href="imprint.html">Imprint</a>
+        </div>
+        
+        
+        <p>&copy; 2021 Sebastian Netzker</p>
+
     </footer>
+    <script src="variable.js"></script>
+     <script src="script.js"></script>
+   <script src="canvas.js"></script>
   </body>
 </html>

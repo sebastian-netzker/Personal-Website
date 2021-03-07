@@ -3,7 +3,7 @@
 ########### CONFIG ###############
 
 $recipient = 'sebastian_netzker@yahoo.de';
-$redirect = 'contact.html';
+$redirect = 'index.html?message=email_send';
 
 ########### CONFIG END ###########
 
